@@ -45,6 +45,7 @@
     "dev": "tsup watch src",
     "lint": "eslint .",
     "play": "pnpm -C playground run dev",
+    "play:build": "pnpm -C playground run build",
     "prepare": "husky",
     "release": "bumpp && pnpm publish",
     "test": "vitest",

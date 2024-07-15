@@ -17,6 +17,7 @@
   "cSpell.words": [
     "bumpp",
     "changelogithub",
+    "iconify",
     "iife",
     "jaywcjlove",
     "pnpm",
@@ -26,6 +27,7 @@
     "vitejs",
     "vitest",
     "vmax",
-    "vmin"
+    "vmin",
+    "vueuse"
   ]
 }

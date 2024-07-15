@@ -12,6 +12,10 @@
   position: relative;
   width: 995px;
   margin: 0 auto;
+  * {
+    box-sizing: content-box;
+  }
+
   ul {
     width: 992px;
     margin-top: 9px;
