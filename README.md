@@ -3,7 +3,7 @@
 [![CI](https://github.com/ntnyq/vue-mac-keyboard/workflows/CI/badge.svg)](https://github.com/ntnyq/vue-mac-keyboard/actions)
 [![NPM VERSION](https://img.shields.io/npm/v/vue-mac-keyboard.svg)](https://www.npmjs.com/package/vue-mac-keyboard)
 [![NPM DOWNLOADS](https://img.shields.io/npm/dy/vue-mac-keyboard.svg)](https://www.npmjs.com/package/vue-mac-keyboard)
-[![COVERAGE](https://coveralls.io/repos/github/ntnyq/vue-mac-keyboard/badge.svg?branch=main)](https://coveralls.io/github/ntnyq/vue-mac-keyboard?branch=main)
+[![CODECOV](https://codecov.io/github/ntnyq/vue-mac-keyboard/branch/main/graph/badge.svg)](https://codecov.io/github/ntnyq/vue-mac-keyboard)
 [![LICENSE](https://img.shields.io/github/license/ntnyq/vue-mac-keyboard.svg)](https://github.com/ntnyq/vue-mac-keyboard/blob/main/LICENSE)
 
 > ⌨️ Macbook computer keyboard style for VueJS component.
@@ -98,7 +98,7 @@ function onKeycodeUp(keycodeData: KeycodeData) {
 
 ## Props
 
-### keycode
+### keycode/v-model:keycode
 
 - **type**: `number[]`
 - **default**: `[]`
@@ -148,7 +148,7 @@ interface KeycodeData {
 
 - [uiwjs/react-mac-keyboard](https://github.com/uiwjs/react-mac-keyboard) created by [jaywcjlove](https://github.com/jaywcjlove)
 
-## Changlog
+## Changelog
 
 [See releases](https://github.com/ntnyq/vue-mac-keyboard/releases)
 
