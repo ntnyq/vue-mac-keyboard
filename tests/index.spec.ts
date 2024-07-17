@@ -20,11 +20,11 @@ describe('MacKeyboardComponent', () => {
   it('should prop keycode work', async () => {
     const wrapper = mount(MacKeyboardComponent)
 
-    expect(wrapper.findAll('.vue-mac-keyboard .pressed').length).toBe(0)
+    expect(wrapper.findAll('.vue-mac-keyboard .is-pressed').length).toBe(0)
 
     await wrapper.setProps({ keycode: [KEYCODE_ENTER] })
 
-    expect(wrapper.findAll('.vue-mac-keyboard .pressed').length).toBe(1)
+    expect(wrapper.findAll('.vue-mac-keyboard .is-pressed').length).toBe(1)
   })
 
   it('should events work', async () => {
@@ -32,11 +32,11 @@ describe('MacKeyboardComponent', () => {
 
     wrapper.find('.vue-mac-keyboard li').trigger('mousedown')
 
-    expect(wrapper.emitted()).toHaveProperty('KeycodeDown')
+    expect(wrapper.emitted()).toHaveProperty('keycodeDown')
 
     wrapper.find('.vue-mac-keyboard li').trigger('mouseup')
 
-    expect(wrapper.emitted()).toHaveProperty('KeycodeDown')
-    expect(wrapper.emitted()).toHaveProperty('KeycodeUp')
+    expect(wrapper.emitted()).toHaveProperty('keycodeDown')
+    expect(wrapper.emitted()).toHaveProperty('keycodeUp')
   })
 })

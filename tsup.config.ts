@@ -5,7 +5,7 @@ export default defineConfig({
   dts: true,
   clean: true,
   cjsInterop: true,
-  format: ['cjs', 'esm', 'iife'],
+  format: ['cjs', 'esm'],
   target: ['node18', 'es2016'],
   external: ['vue'],
   onSuccess: 'pnpm run build:style',
