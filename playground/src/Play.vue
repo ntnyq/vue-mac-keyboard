@@ -3,16 +3,8 @@ import 'vue-mac-keyboard/style'
 import { ref } from 'vue'
 import { MacKeyboard } from 'vue-mac-keyboard'
 import { description } from '../../package.json'
-import type { KeycodeData } from 'vue-mac-keyboard'
 
 const keycode = ref<number[]>([])
-
-function onKeycodeDown(keycodeData: KeycodeData) {
-  keycode.value = [keycodeData.keycode]
-}
-function onKeycodeUp() {
-  keycode.value = []
-}
 </script>
 
 <template>
@@ -26,11 +18,16 @@ function onKeycodeUp() {
       <p class="text-lg op-50">{{ description }}</p>
     </div>
     <div class="w-full of-x-auto">
-      <MacKeyboard
-        @keycode-down="onKeycodeDown"
-        @keycode-up="onKeycodeUp"
-        :keycode="keycode"
-      />
+      <MacKeyboard v-model:keycode="keycode" />
+    </div>
+    <div class="justify-center flex h-60px items-center">
+      <div
+        v-show="keycode.length > 0"
+        class="min-w-200px"
+      >
+        <span class="op-60 text-lg mr-1">Keycode:</span>
+        <span class="font-bold text-2xl">{{ keycode.join(', ') }}</span>
+      </div>
     </div>
   </div>
 </template>

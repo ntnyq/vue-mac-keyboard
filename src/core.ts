@@ -1,7 +1,7 @@
 import { computed, defineComponent, h } from 'vue'
 import { EventKey, emits, props } from './types'
 import { keycodeDataList } from './constants'
-import type { Props } from './types'
+import type { KeycodeData } from './types'
 
 export const MacKeyboard = defineComponent({
   name: 'MacKeyboard',
@@ -15,9 +15,23 @@ export const MacKeyboard = defineComponent({
   },
 
   setup(props, context) {
-    const config = computed<Required<Props>>(() => ({
-      keycode: props.keycode || [],
-    }))
+    const keycode = computed({
+      get() {
+        return props.keycode || []
+      },
+      set(value: number[]) {
+        context.emit(EventKey.KeycodeUpdate, value)
+      },
+    })
+
+    function onKeycodeDown(keycodeData: KeycodeData) {
+      context.emit(EventKey.KeycodeDown, keycodeData)
+      keycode.value = [keycodeData.keycode]
+    }
+    function onKeycodeUp(keycodeData: KeycodeData) {
+      context.emit(EventKey.KeycodeUp, keycodeData)
+      keycode.value = []
+    }
 
     return () =>
       h(
@@ -32,9 +46,9 @@ export const MacKeyboard = defineComponent({
             h(
               'li',
               {
-                onMousedown: () => context.emit(EventKey.KeycodeDown, keycodeData),
-                onMouseup: () => context.emit(EventKey.KeycodeUp, keycodeData),
-                class: config.value.keycode.includes(keycodeData.keycode) ? 'pressed' : '',
+                onMousedown: () => onKeycodeDown(keycodeData),
+                onMouseup: () => onKeycodeUp(keycodeData),
+                class: keycode.value.includes(keycodeData.keycode) ? 'pressed' : '',
                 'data-key': keycodeData.keycode,
               },
               keycodeData.name.map(name => h('span', {}, name)),

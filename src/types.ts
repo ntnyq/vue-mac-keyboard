@@ -14,11 +14,20 @@ export type Props = ExtractPropTypes<typeof props>
 export enum EventKey {
   KeycodeDown = 'keycodeDown',
   KeycodeUp = 'keycodeUp',
+
+  /**
+   * suport `v-model:keycode`
+   */
+  KeycodeUpdate = 'update:keycode',
 }
 
 export const emits = {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  [EventKey.KeycodeUpdate]: (keycode: number[]) => true,
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   [EventKey.KeycodeDown]: (keycodeData: KeycodeData) => true,
+
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   [EventKey.KeycodeUp]: (keycodeData: KeycodeData) => true,
 }
