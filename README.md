@@ -6,7 +6,11 @@
 [![COVERAGE](https://coveralls.io/repos/github/ntnyq/vue-mac-keyboard/badge.svg?branch=main)](https://coveralls.io/github/ntnyq/vue-mac-keyboard?branch=main)
 [![LICENSE](https://img.shields.io/github/license/ntnyq/vue-mac-keyboard.svg)](https://github.com/ntnyq/vue-mac-keyboard/blob/main/LICENSE)
 
-> Macbook computer keyboard style for VueJS component.
+> ⌨️ Macbook computer keyboard style for VueJS component.
+
+## Playground
+
+[playground](https://vue-mac-keyboard.ntnyq.com)
 
 ## Install
 
@@ -28,22 +32,129 @@ yarn add vue-mac-keyboard
 pnpm add vue-mac-keyboard
 ```
 
+## Screenshot
+
+![Screenshot](https://raw.githubusercontent.com/ntnyq/vue-mac-keyboard/main/screenshots/keyboard.png)
+
 ## Usage
+
+### Local Component
 
 ```vue
 <script lang="ts" setup>
 import 'vue-mac-keyboard/style'
 import { MacKeyboard } from 'vue-mac-keyboard'
+import { ref } from 'vue'
+import type { KeycodeData } from 'vue-mac-keyboard'
+
+const keycode = ref([])
+
+function onKeycodeDown(keycodeData: KeycodeData) {
+  keycode.value = [keycodeData.keycode]
+}
+function onKeycodeUp(keycodeData: KeycodeData) {
+  keycode.value = []
+}
 </script>
 
 <template>
-  <MacKeyboard />
+  <MacKeyboard
+    @keycode-down="onKeycodeDown"
+    @keycode-up="onKeycodeUp"
+    :keycode="keycode"
+  />
 </template>
+```
+
+### Global component registed via plugin
+
+```ts
+import 'vue-mac-keyboard/style'
+import { createApp } from 'vue'
+import MacKeyboard from 'vue-mac-keyboard'
+import App from '@/App.vue'
+
+const app = createApp(App)
+
+app.use(MacKeyboard)
+
+app.mount('#app')
+```
+
+Use it in component:
+
+```vue
+<script lang="ts" setup>
+import { ref } from 'vue'
+import type { KeycodeData } from 'vue-mac-keyboard'
+
+const keycode = ref([])
+
+function onKeycodeDown(keycodeData: KeycodeData) {
+  keycode.value = [keycodeData.keycode]
+}
+function onKeycodeUp(keycodeData: KeycodeData) {
+  keycode.value = []
+}
+</script>
+
+<template>
+  <MacKeyboard
+    @keycode-down="onKeycodeDown"
+    @keycode-up="onKeycodeUp"
+    :keycode="keycode"
+  />
+</template>
+```
+
+## Props
+
+### keycode
+
+- **type**: `number[]`
+- **default**: `[]`
+
+Highlighted keys.
+
+See **[keycodeDataList](https://github.com/ntnyq/vue-mac-keyboard/blob/main/src/constants.ts)** for all available keycodes.
+
+## Events
+
+### keycodeDown
+
+- **type**: `(keycodeData: KeycodeData) => void`
+
+Triggered when a keycode is pressed.
+
+### keycodeUp
+
+- **type**: `(keycodeData: KeycodeData) => void`
+
+Triggered when a keycode is released.
+
+## Interfaces
+
+```ts
+interface KeycodeData {
+  /**
+   * keycode of the key
+   */
+  keycode: number
+
+  /**
+   * key names, used for rendering UI
+   */
+  name: string[]
+}
 ```
 
 ## Credits
 
 - [uiwjs/react-mac-keyboard](https://github.com/uiwjs/react-mac-keyboard) created by [jaywcjlove](https://github.com/jaywcjlove)
+
+## Changlog
+
+[See releases](https://github.com/ntnyq/vue-mac-keyboard/releases)
 
 ## License
 
