@@ -12,8 +12,8 @@ export const props = {
 export type Props = ExtractPropTypes<typeof props>
 
 export enum EventKey {
-  KeycodeDown = 'KeycodeDown',
-  KeycodeUp = 'KeycodeUp',
+  KeycodeDown = 'keycodeDown',
+  KeycodeUp = 'keycodeUp',
 }
 
 export const emits = {
