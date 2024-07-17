@@ -5,8 +5,24 @@ export interface KeycodeData {
   name: string[]
 }
 
+// eslint-disable-next-line no-void
+const UNDEFINED = void 0
+
+const NonDefaultBooleanType = {
+  type: Boolean,
+  default: UNDEFINED,
+}
+
 export const props = {
+  /**
+   * Active keys
+   */
   keycode: Array as PropType<number[]>,
+
+  /**
+   * Disabled keycode events
+   */
+  disabled: NonDefaultBooleanType,
 }
 
 export type Props = ExtractPropTypes<typeof props>

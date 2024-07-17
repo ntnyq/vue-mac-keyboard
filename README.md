@@ -48,21 +48,10 @@ import { ref } from 'vue'
 import type { KeycodeData } from 'vue-mac-keyboard'
 
 const keycode = ref([])
-
-function onKeycodeDown(keycodeData: KeycodeData) {
-  keycode.value = [keycodeData.keycode]
-}
-function onKeycodeUp(keycodeData: KeycodeData) {
-  keycode.value = []
-}
 </script>
 
 <template>
-  <MacKeyboard
-    @keycode-down="onKeycodeDown"
-    @keycode-up="onKeycodeUp"
-    :keycode="keycode"
-  />
+  <MacKeyboard v-model:keycode="keycode" />
 </template>
 ```
 
@@ -117,6 +106,13 @@ function onKeycodeUp(keycodeData: KeycodeData) {
 Highlighted keys.
 
 See **[keycodeDataList](https://github.com/ntnyq/vue-mac-keyboard/blob/main/src/constants.ts)** for all available keycodes.
+
+### disabled
+
+- **type**: `boolean`
+- **default**: `undefined`
+
+Disable the keyboard from interacting.
 
 ## Events
 

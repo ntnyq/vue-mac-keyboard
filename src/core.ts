@@ -25,10 +25,14 @@ export const MacKeyboard = defineComponent({
     })
 
     function onKeycodeDown(keycodeData: KeycodeData) {
+      if (props.disabled) return
+
       context.emit(EventKey.KeycodeDown, keycodeData)
       keycode.value = [keycodeData.keycode]
     }
     function onKeycodeUp(keycodeData: KeycodeData) {
+      if (props.disabled) return
+
       context.emit(EventKey.KeycodeUp, keycodeData)
       keycode.value = []
     }
@@ -48,7 +52,10 @@ export const MacKeyboard = defineComponent({
               {
                 onMousedown: () => onKeycodeDown(keycodeData),
                 onMouseup: () => onKeycodeUp(keycodeData),
-                class: keycode.value.includes(keycodeData.keycode) ? 'pressed' : '',
+                class: [
+                  keycode.value.includes(keycodeData.keycode) ? 'is-pressed' : '',
+                  props.disabled ? 'is-disabled' : '',
+                ],
                 'data-key': keycodeData.keycode,
               },
               keycodeData.name.map(name => h('span', {}, name)),

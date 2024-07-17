@@ -47,13 +47,19 @@
     user-select: none;
     cursor: pointer;
     position: relative;
-    &:active,
-    &.pressed {
+    &:not(.is-disabled):active,
+    &.is-pressed {
       color: #52f800;
       background-color: #100068;
       border: 1px solid #332376;
       transition: 1ms linear;
     }
+
+    &.is-disabled {
+      opacity: 0.85;
+      cursor: not-allowed;
+    }
+
     &:nth-child(1) {
       width: 99px;
       height: 28px;
@@ -194,7 +200,7 @@
     width: 102px;
   }
   li:nth-child(43) {
-    &:active {
+    &:not(.is-disabled):active {
       span:first-child {
         background: #52f800;
       }
