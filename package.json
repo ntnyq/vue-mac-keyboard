@@ -40,7 +40,7 @@
     "build": "tsup",
     "build:style": "sass src/style.scss dist/style.css --no-source-map --style=compressed",
     "coverage": "vitest --coverage",
-    "dev": "tsup watch src",
+    "dev": "tsup --watch src",
     "lint": "eslint .",
     "play": "pnpm -C playground run dev",
     "play:build": "pnpm -C playground run build",
