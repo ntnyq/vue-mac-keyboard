@@ -42,9 +42,9 @@ pnpm add vue-mac-keyboard
 
 ```vue
 <script lang="ts" setup>
-import 'vue-mac-keyboard/style'
-import { MacKeyboard } from 'vue-mac-keyboard'
 import { ref } from 'vue'
+import { MacKeyboard } from 'vue-mac-keyboard'
+import 'vue-mac-keyboard/style'
 import type { KeycodeData } from 'vue-mac-keyboard'
 
 const keycode = ref([])
@@ -58,10 +58,10 @@ const keycode = ref([])
 ### Global component registed via plugin
 
 ```ts
-import 'vue-mac-keyboard/style'
 import { createApp } from 'vue'
 import MacKeyboard from 'vue-mac-keyboard'
 import App from '@/App.vue'
+import 'vue-mac-keyboard/style'
 
 const app = createApp(App)
 

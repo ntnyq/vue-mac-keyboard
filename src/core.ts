@@ -1,6 +1,6 @@
 import { computed, defineComponent, h } from 'vue'
-import { EventKey, emits, props } from './types'
 import { keycodeDataList } from './constants'
+import { emits, EventKey, props } from './types'
 import type { KeycodeData } from './types'
 
 export const MacKeyboard = defineComponent({

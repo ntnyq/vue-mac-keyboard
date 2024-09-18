@@ -5,11 +5,11 @@ export const install: Plugin = app => {
   app.component('MacKeyboard', MacKeyboard)
 }
 
-export type { Props, Emits } from './types'
+export * from './types'
 
 export const MacKeyboardPlugin = { install }
 
 export { MacKeyboard, MacKeyboardPlugin as default }
 
-export * from './types'
 export * from './constants'
+export type { Emits, Props } from './types'

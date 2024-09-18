@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { toggleDark } from '../composables/useDark'
 import { version } from '../../../package.json'
+import { toggleDark } from '../composables/useDark'
 </script>
 
 <template>

@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import 'vue-mac-keyboard/style'
 import { ref } from 'vue'
 import { MacKeyboard } from 'vue-mac-keyboard'
 import { description } from '../../package.json'
+import 'vue-mac-keyboard/style'
 
 const keycode = ref<number[]>([])
 </script>
