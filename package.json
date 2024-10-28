@@ -2,7 +2,7 @@
   "name": "vue-mac-keyboard",
   "type": "module",
   "version": "0.1.0",
-  "packageManager": "pnpm@9.12.2",
+  "packageManager": "pnpm@9.12.3",
   "description": "Macbook computer keyboard style for VueJS component.",
   "keywords": [
     "vue",
@@ -56,9 +56,9 @@
     "vue": "^3.5.12"
   },
   "devDependencies": {
-    "@ntnyq/eslint-config": "^3.1.0",
+    "@ntnyq/eslint-config": "^3.1.1",
     "@ntnyq/prettier-config": "^1.21.3",
-    "@types/node": "^22.7.7",
+    "@types/node": "^22.8.1",
     "@vitejs/plugin-vue": "^5.1.4",
     "@vitest/coverage-v8": "^2.1.3",
     "@vue/test-utils": "^2.4.6",
@@ -69,10 +69,10 @@
     "nano-staged": "^0.8.0",
     "npm-run-all2": "^7.0.1",
     "prettier": "^3.3.3",
-    "sass": "^1.80.3",
-    "tsup": "^8.3.0",
+    "sass": "^1.80.4",
+    "tsup": "^8.3.5",
     "typescript": "^5.6.3",
-    "vite": "^5.4.9",
+    "vite": "^5.4.10",
     "vitest": "^2.1.3"
   },
   "prettier": "@ntnyq/prettier-config",
