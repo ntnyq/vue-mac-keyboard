@@ -14,7 +14,7 @@ importers:
     devDependencies:
       '@ntnyq/eslint-config':
         specifier: ^3.2.0
-        version: 3.2.0(@types/eslint@9.6.1)(@typescript-eslint/eslint-plugin@8.12.2(@typescript-eslint/parser@8.12.2(eslint@9.14.0(jiti@1.21.6))(typescript@5.6.3))(eslint@9.14.0(jiti@1.21.6))(typescript@5.6.3))(@typescript-eslint/utils@8.12.2(eslint@9.14.0(jiti@1.21.6))(typescript@5.6.3))(eslint@9.14.0(jiti@1.21.6))(typescript@5.6.3)(vitest@2.1.4(@types/node@22.8.7)(happy-dom@15.10.1)(sass@1.80.6))
+        version: 3.2.0(@types/eslint@9.6.1)(@typescript-eslint/eslint-plugin@8.12.2(@typescript-eslint/parser@8.12.2(eslint@9.14.0(jiti@1.21.6))(typescript@5.6.3))(eslint@9.14.0(jiti@1.21.6))(typescript@5.6.3))(@typescript-eslint/utils@8.12.2(eslint@9.14.0(jiti@1.21.6))(typescript@5.6.3))(eslint@9.14.0(jiti@1.21.6))(typescript@5.6.3)(vitest@2.1.4(@types/node@22.8.7)(happy-dom@15.10.2)(sass@1.80.6))
       '@ntnyq/prettier-config':
         specifier: ^1.21.3
         version: 1.21.3
@@ -26,7 +26,7 @@ importers:
         version: 5.1.4(vite@5.4.10(@types/node@22.8.7)(sass@1.80.6))(vue@3.5.12(typescript@5.6.3))
       '@vitest/coverage-v8':
         specifier: ^2.1.4
-        version: 2.1.4(vitest@2.1.4(@types/node@22.8.7)(happy-dom@15.10.1)(sass@1.80.6))
+        version: 2.1.4(vitest@2.1.4(@types/node@22.8.7)(happy-dom@15.10.2)(sass@1.80.6))
       '@vue/test-utils':
         specifier: ^2.4.6
         version: 2.4.6
@@ -38,7 +38,7 @@ importers:
         version: 9.14.0(jiti@1.21.6)
       happy-dom:
         specifier: ^15.8.3
-        version: 15.10.1
+        version: 15.10.2
       husky:
         specifier: ^9.1.6
         version: 9.1.6
@@ -65,7 +65,7 @@ importers:
         version: 5.4.10(@types/node@22.8.7)(sass@1.80.6)
       vitest:
         specifier: ^2.1.4
-        version: 2.1.4(@types/node@22.8.7)(happy-dom@15.10.1)(sass@1.80.6)
+        version: 2.1.4(@types/node@22.8.7)(happy-dom@15.10.2)(sass@1.80.6)
 
   playground:
     dependencies:
@@ -1802,8 +1802,8 @@ packages:
     resolution: {integrity: sha512-ax7ZYomf6jqPTQ4+XCpUGyXKHk5WweS+e05MBO4/y3WJ5RkmPXNKvX+bx1behVILVwr6JSQvZAku021CHPXG3Q==}
     engines: {node: '>=10'}
 
-  happy-dom@15.10.1:
-    resolution: {integrity: sha512-FuGnj/qIB4QnBL6fWmD7Wnh6STxevLgOVWB6+nopDGgWG1+t9CXkNB2ldZ+iqwD2UKxD2D0SU8el8A6AX6Q1+g==}
+  happy-dom@15.10.2:
+    resolution: {integrity: sha512-NbA5XrSovenJIIcfixCREX3ZnV7yHP4phhbfuxxf4CPn+LZpz/jIM9EqJ2DrPwgVDSMoAKH3pZwQvkbsSiCrUw==}
     engines: {node: '>=18.0.0'}
 
   has-flag@4.0.0:
@@ -3388,13 +3388,13 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.17.1
 
-  '@ntnyq/eslint-config@3.2.0(@types/eslint@9.6.1)(@typescript-eslint/eslint-plugin@8.12.2(@typescript-eslint/parser@8.12.2(eslint@9.14.0(jiti@1.21.6))(typescript@5.6.3))(eslint@9.14.0(jiti@1.21.6))(typescript@5.6.3))(@typescript-eslint/utils@8.12.2(eslint@9.14.0(jiti@1.21.6))(typescript@5.6.3))(eslint@9.14.0(jiti@1.21.6))(typescript@5.6.3)(vitest@2.1.4(@types/node@22.8.7)(happy-dom@15.10.1)(sass@1.80.6))':
+  '@ntnyq/eslint-config@3.2.0(@types/eslint@9.6.1)(@typescript-eslint/eslint-plugin@8.12.2(@typescript-eslint/parser@8.12.2(eslint@9.14.0(jiti@1.21.6))(typescript@5.6.3))(eslint@9.14.0(jiti@1.21.6))(typescript@5.6.3))(@typescript-eslint/utils@8.12.2(eslint@9.14.0(jiti@1.21.6))(typescript@5.6.3))(eslint@9.14.0(jiti@1.21.6))(typescript@5.6.3)(vitest@2.1.4(@types/node@22.8.7)(happy-dom@15.10.2)(sass@1.80.6))':
     dependencies:
       '@eslint-community/eslint-plugin-eslint-comments': 4.4.1(eslint@9.14.0(jiti@1.21.6))
       '@eslint/js': 9.14.0
       '@eslint/markdown': 6.2.1
       '@unocss/eslint-plugin': 0.63.6(eslint@9.14.0(jiti@1.21.6))(typescript@5.6.3)
-      '@vitest/eslint-plugin': 1.1.7(@typescript-eslint/utils@8.12.2(eslint@9.14.0(jiti@1.21.6))(typescript@5.6.3))(eslint@9.14.0(jiti@1.21.6))(typescript@5.6.3)(vitest@2.1.4(@types/node@22.8.7)(happy-dom@15.10.1)(sass@1.80.6))
+      '@vitest/eslint-plugin': 1.1.7(@typescript-eslint/utils@8.12.2(eslint@9.14.0(jiti@1.21.6))(typescript@5.6.3))(eslint@9.14.0(jiti@1.21.6))(typescript@5.6.3)(vitest@2.1.4(@types/node@22.8.7)(happy-dom@15.10.2)(sass@1.80.6))
       eslint: 9.14.0(jiti@1.21.6)
       eslint-config-flat-gitignore: 0.3.0(eslint@9.14.0(jiti@1.21.6))
       eslint-flat-config-utils: 0.4.0
@@ -3843,7 +3843,7 @@ snapshots:
       vite: 5.4.10(@types/node@22.8.7)(sass@1.80.6)
       vue: 3.5.12(typescript@5.6.3)
 
-  '@vitest/coverage-v8@2.1.4(vitest@2.1.4(@types/node@22.8.7)(happy-dom@15.10.1)(sass@1.80.6))':
+  '@vitest/coverage-v8@2.1.4(vitest@2.1.4(@types/node@22.8.7)(happy-dom@15.10.2)(sass@1.80.6))':
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@bcoe/v8-coverage': 0.2.3
@@ -3857,17 +3857,17 @@ snapshots:
       std-env: 3.7.0
       test-exclude: 7.0.1
       tinyrainbow: 1.2.0
-      vitest: 2.1.4(@types/node@22.8.7)(happy-dom@15.10.1)(sass@1.80.6)
+      vitest: 2.1.4(@types/node@22.8.7)(happy-dom@15.10.2)(sass@1.80.6)
     transitivePeerDependencies:
       - supports-color
 
-  '@vitest/eslint-plugin@1.1.7(@typescript-eslint/utils@8.12.2(eslint@9.14.0(jiti@1.21.6))(typescript@5.6.3))(eslint@9.14.0(jiti@1.21.6))(typescript@5.6.3)(vitest@2.1.4(@types/node@22.8.7)(happy-dom@15.10.1)(sass@1.80.6))':
+  '@vitest/eslint-plugin@1.1.7(@typescript-eslint/utils@8.12.2(eslint@9.14.0(jiti@1.21.6))(typescript@5.6.3))(eslint@9.14.0(jiti@1.21.6))(typescript@5.6.3)(vitest@2.1.4(@types/node@22.8.7)(happy-dom@15.10.2)(sass@1.80.6))':
     dependencies:
       '@typescript-eslint/utils': 8.12.2(eslint@9.14.0(jiti@1.21.6))(typescript@5.6.3)
       eslint: 9.14.0(jiti@1.21.6)
     optionalDependencies:
       typescript: 5.6.3
-      vitest: 2.1.4(@types/node@22.8.7)(happy-dom@15.10.1)(sass@1.80.6)
+      vitest: 2.1.4(@types/node@22.8.7)(happy-dom@15.10.2)(sass@1.80.6)
 
   '@vitest/expect@2.1.4':
     dependencies:
@@ -4764,7 +4764,7 @@ snapshots:
     dependencies:
       duplexer: 0.1.2
 
-  happy-dom@15.10.1:
+  happy-dom@15.10.2:
     dependencies:
       entities: 4.5.0
       webidl-conversions: 7.0.0
@@ -5965,7 +5965,7 @@ snapshots:
       fsevents: 2.3.3
       sass: 1.80.6
 
-  vitest@2.1.4(@types/node@22.8.7)(happy-dom@15.10.1)(sass@1.80.6):
+  vitest@2.1.4(@types/node@22.8.7)(happy-dom@15.10.2)(sass@1.80.6):
     dependencies:
       '@vitest/expect': 2.1.4
       '@vitest/mocker': 2.1.4(vite@5.4.10(@types/node@22.8.7)(sass@1.80.6))
@@ -5989,7 +5989,7 @@ snapshots:
       why-is-node-running: 2.3.0
     optionalDependencies:
       '@types/node': 22.8.7
-      happy-dom: 15.10.1
+      happy-dom: 15.10.2
     transitivePeerDependencies:
       - less
       - lightningcss
