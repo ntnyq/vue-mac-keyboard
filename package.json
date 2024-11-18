@@ -2,7 +2,7 @@
   "name": "vue-mac-keyboard",
   "type": "module",
   "version": "0.1.0",
-  "packageManager": "pnpm@9.12.3",
+  "packageManager": "pnpm@9.13.2",
   "description": "Macbook computer keyboard style for VueJS component.",
   "keywords": [
     "vue",
@@ -53,27 +53,27 @@
     "vue": "^3.0.0"
   },
   "dependencies": {
-    "vue": "^3.5.12"
+    "vue": "^3.5.13"
   },
   "devDependencies": {
-    "@ntnyq/eslint-config": "^3.2.0",
+    "@ntnyq/eslint-config": "^3.2.2",
     "@ntnyq/prettier-config": "^1.21.3",
     "@types/node": "^22.9.0",
-    "@vitejs/plugin-vue": "^5.1.5",
-    "@vitest/coverage-v8": "^2.1.4",
+    "@vitejs/plugin-vue": "^5.2.0",
+    "@vitest/coverage-v8": "^2.1.5",
     "@vue/test-utils": "^2.4.6",
     "bumpp": "^9.8.1",
-    "eslint": "^9.14.0",
-    "happy-dom": "^15.11.0",
+    "eslint": "^9.15.0",
+    "happy-dom": "^15.11.6",
     "husky": "^9.1.6",
     "nano-staged": "^0.8.0",
     "npm-run-all2": "^7.0.1",
     "prettier": "^3.3.3",
-    "sass": "^1.80.6",
+    "sass": "^1.81.0",
     "tsup": "^8.3.5",
     "typescript": "^5.6.3",
-    "vite": "^5.4.10",
-    "vitest": "^2.1.4"
+    "vite": "^5.4.11",
+    "vitest": "^2.1.5"
   },
   "prettier": "@ntnyq/prettier-config",
   "nano-staged": {
