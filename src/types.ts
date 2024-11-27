@@ -25,8 +25,6 @@ export const props = {
   disabled: NonDefaultBooleanType,
 }
 
-export type Props = ExtractPropTypes<typeof props>
-
 export enum EventKey {
   KeycodeDown = 'keycodeDown',
   KeycodeUp = 'keycodeUp',
@@ -37,15 +35,14 @@ export enum EventKey {
   KeycodeUpdate = 'update:keycode',
 }
 
+export type Props = ExtractPropTypes<typeof props>
+
 export const emits = {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  /* eslint-disable @typescript-eslint/no-unused-vars */
   [EventKey.KeycodeUpdate]: (keycode: number[]) => true,
-
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   [EventKey.KeycodeDown]: (keycodeData: KeycodeData) => true,
-
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   [EventKey.KeycodeUp]: (keycodeData: KeycodeData) => true,
+  /* eslint-enable @typescript-eslint/no-unused-vars */
 }
 
 export type Emits = typeof emits

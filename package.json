@@ -2,12 +2,12 @@
   "name": "vue-mac-keyboard",
   "type": "module",
   "version": "0.1.0",
-  "packageManager": "pnpm@9.14.2",
+  "packageManager": "pnpm@9.14.4",
   "description": "Macbook computer keyboard style for VueJS component.",
   "keywords": [
-    "vue",
     "keyboard",
-    "macbook"
+    "macbook",
+    "vue"
   ],
   "license": "MIT",
   "author": {
@@ -41,6 +41,7 @@
     "build:style": "sass src/style.scss dist/style.css --no-source-map --style=compressed",
     "coverage": "vitest --coverage",
     "dev": "tsup --watch src",
+    "dev:style": "sass src/style.scss dist/style.css --no-source-map --watch --style=compressed",
     "lint": "eslint .",
     "play": "pnpm -C playground run dev",
     "play:build": "pnpm -C playground run build",
@@ -56,26 +57,25 @@
     "vue": "^3.5.13"
   },
   "devDependencies": {
-    "@ntnyq/eslint-config": "^3.3.1",
+    "@ntnyq/eslint-config": "^3.8.1",
     "@ntnyq/prettier-config": "^1.22.0",
-    "@types/node": "^22.9.3",
-    "@vitejs/plugin-vue": "^5.2.0",
-    "@vitest/coverage-v8": "^2.1.5",
+    "@types/node": "^22.10.1",
+    "@vitejs/plugin-vue": "^5.2.1",
+    "@vitest/coverage-v8": "^2.1.8",
     "@vue/test-utils": "^2.4.6",
     "bumpp": "^9.8.1",
-    "eslint": "^9.15.0",
-    "happy-dom": "^15.11.6",
+    "eslint": "^9.16.0",
+    "happy-dom": "^15.11.7",
     "husky": "^9.1.7",
     "nano-staged": "^0.8.0",
     "npm-run-all2": "^7.0.1",
-    "prettier": "^3.3.3",
-    "sass": "^1.81.0",
+    "prettier": "^3.4.2",
+    "sass": "^1.82.0",
     "tsup": "^8.3.5",
     "typescript": "^5.7.2",
-    "vite": "^6.0.1",
-    "vitest": "^2.1.5"
+    "vite": "^6.0.3",
+    "vitest": "^2.1.8"
   },
-  "prettier": "@ntnyq/prettier-config",
   "nano-staged": {
     "*.{js,ts,cjs,mjs,vue,md,yml,yaml,json}": "eslint --fix"
   }
