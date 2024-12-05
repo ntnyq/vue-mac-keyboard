@@ -41,7 +41,7 @@ export const MacKeyboard = defineComponent({
       h(
         'div',
         {
-          class: 'vue-mac-keyboard',
+          class: ['vue-mac-keyboard', props.disabled ? 'is-disabled' : ''],
         },
         h(
           'ul',
