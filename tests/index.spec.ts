@@ -1,7 +1,10 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
 import { defineComponent } from 'vue'
-import { MacKeyboard as MacKeyboardComponent, plugin as MacKeyboardPlugin } from '../src'
+import {
+  MacKeyboard as MacKeyboardComponent,
+  plugin as MacKeyboardPlugin,
+} from '../src'
 
 const KEYCODE_ENTER = 13
 
@@ -35,7 +38,9 @@ describe('MacKeyboardComponent', () => {
   it('should have fixed count key', () => {
     const wrapper = mount(MacKeyboardComponent)
 
-    expect(wrapper.findAll('.vue-mac-keyboard li').length).toMatchInlineSnapshot(`78`)
+    expect(
+      wrapper.findAll('.vue-mac-keyboard li').length,
+    ).toMatchInlineSnapshot(`78`)
   })
 
   it('should prop keycode work', async () => {

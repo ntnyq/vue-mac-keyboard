@@ -25,15 +25,14 @@ export const props = {
   disabled: NonDefaultBooleanType,
 }
 
-export enum EventKey {
-  KeycodeDown = 'keycodeDown',
-  KeycodeUp = 'keycodeUp',
-
+export const EventKey = Object.freeze({
+  KeycodeDown: 'keycodeDown',
+  KeycodeUp: 'keycodeUp',
   /**
    * suport `v-model:keycode`
    */
-  KeycodeUpdate = 'update:keycode',
-}
+  KeycodeUpdate: 'update:keycode',
+})
 
 export type Props = ExtractPropTypes<typeof props>
 

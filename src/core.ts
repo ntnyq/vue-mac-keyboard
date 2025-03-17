@@ -53,7 +53,9 @@ export const MacKeyboard = defineComponent({
                 onMousedown: () => onKeycodeDown(keycodeData),
                 onMouseup: () => onKeycodeUp(keycodeData),
                 class: [
-                  keycode.value.includes(keycodeData.keycode) ? 'is-pressed' : '',
+                  keycode.value.includes(keycodeData.keycode)
+                    ? 'is-pressed'
+                    : '',
                   props.disabled ? 'is-disabled' : '',
                 ],
                 'data-key': keycodeData.keycode,
