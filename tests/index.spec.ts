@@ -11,7 +11,7 @@ const KEYCODE_ENTER = 13
 describe('MacKeyboardPlugin', () => {
   it('should work', () => {
     expect(MacKeyboardPlugin).toBeTruthy()
-    expect(MacKeyboardPlugin.install).toBeTruthy()
+    expect(MacKeyboardPlugin.install).toBeInstanceOf(Function)
   })
 
   it('should register component', () => {

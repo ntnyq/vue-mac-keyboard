@@ -2,7 +2,8 @@ packages:
   - .
   - playground
 overrides:
-  esbuild: ^0.25.1
+  esbuild: ^0.25.4
 onlyBuiltDependencies:
   - '@parcel/watcher'
   - esbuild
+  - unrs-resolver
