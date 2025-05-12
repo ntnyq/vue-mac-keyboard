@@ -3,7 +3,6 @@
 [![CI](https://github.com/ntnyq/vue-mac-keyboard/workflows/CI/badge.svg)](https://github.com/ntnyq/vue-mac-keyboard/actions)
 [![NPM VERSION](https://img.shields.io/npm/v/vue-mac-keyboard.svg)](https://www.npmjs.com/package/vue-mac-keyboard)
 [![NPM DOWNLOADS](https://img.shields.io/npm/dy/vue-mac-keyboard.svg)](https://www.npmjs.com/package/vue-mac-keyboard)
-[![CODECOV](https://codecov.io/github/ntnyq/vue-mac-keyboard/branch/main/graph/badge.svg)](https://codecov.io/github/ntnyq/vue-mac-keyboard)
 [![LICENSE](https://img.shields.io/github/license/ntnyq/vue-mac-keyboard.svg)](https://github.com/ntnyq/vue-mac-keyboard/blob/main/LICENSE)
 
 > ⌨️ Macbook computer keyboard style for VueJS component.
@@ -16,19 +15,19 @@
 
 **npm**:
 
-```bash
+```shell
 npm i vue-mac-keyboard
 ```
 
 **yarn**
 
-```bash
+```shell
 yarn add vue-mac-keyboard
 ```
 
 **pnpm**
 
-```bash
+```shell
 pnpm add vue-mac-keyboard
 ```
 
@@ -91,7 +90,7 @@ function onKeycodeUp(keycodeData: KeycodeData) {
   <MacKeyboard
     @keycode-down="onKeycodeDown"
     @keycode-up="onKeycodeUp"
-    :keycode="keycode"
+    :keycode
   />
 </template>
 ```

@@ -25,13 +25,17 @@ export const MacKeyboard = defineComponent({
     })
 
     function onKeycodeDown(keycodeData: KeycodeData) {
-      if (props.disabled) return
+      if (props.disabled) {
+        return
+      }
 
       context.emit(EventKey.KeycodeDown, keycodeData)
       keycode.value = [keycodeData.keycode]
     }
     function onKeycodeUp(keycodeData: KeycodeData) {
-      if (props.disabled) return
+      if (props.disabled) {
+        return
+      }
 
       context.emit(EventKey.KeycodeUp, keycodeData)
       keycode.value = []
