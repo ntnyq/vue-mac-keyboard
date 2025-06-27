@@ -17,6 +17,6 @@
     "@iconify-json/ri": "^1.2.5",
     "@vitejs/plugin-vue": "^5.2.4",
     "unocss": "^66.3.2",
-    "vite": "^6.3.5"
+    "vite": "^7.0.0"
   }
 }
