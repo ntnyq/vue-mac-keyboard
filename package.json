@@ -57,7 +57,7 @@
     "@vue/test-utils": "^2.4.6",
     "bumpp": "^10.2.3",
     "eslint": "^9.33.0",
-    "happy-dom": "^18.0.1",
+    "happy-dom": "^19.0.1",
     "husky": "^9.1.7",
     "nano-staged": "^0.8.0",
     "npm-run-all2": "^8.0.4",
