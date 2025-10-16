@@ -90,7 +90,7 @@ function onKeycodeUp(keycodeData: KeycodeData) {
   <MacKeyboard
     @keycode-down="onKeycodeDown"
     @keycode-up="onKeycodeUp"
-    :keycode="keycode"
+    :keycode
   />
 </template>
 ```
