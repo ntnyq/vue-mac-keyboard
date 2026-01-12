@@ -8,11 +8,11 @@
     "dev": "vite"
   },
   "devDependencies": {
-    "@iconify-json/ri": "^1.2.6",
-    "@unocss/reset": "^66.5.11",
+    "@iconify-json/ri": "^1.2.7",
+    "@unocss/reset": "^66.5.12",
     "@vitejs/plugin-vue": "^6.0.3",
     "@vueuse/core": "^14.1.0",
-    "unocss": "^66.5.11",
+    "unocss": "^66.5.12",
     "vite": "npm:rolldown-vite@latest",
     "vue": "^3.5.26",
     "vue-mac-keyboard": "workspace:*"
