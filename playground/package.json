@@ -9,10 +9,10 @@
   },
   "devDependencies": {
     "@iconify-json/ri": "^1.2.10",
-    "@unocss/reset": "^66.6.2",
+    "@unocss/reset": "^66.6.6",
     "@vitejs/plugin-vue": "^6.0.4",
     "@vueuse/core": "^14.2.1",
-    "unocss": "^66.6.2",
+    "unocss": "^66.6.6",
     "vite": "npm:rolldown-vite@latest",
     "vue": "^3.5.29",
     "vue-mac-keyboard": "workspace:*"
