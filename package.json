@@ -2,7 +2,7 @@
   "name": "vue-mac-keyboard",
   "type": "module",
   "version": "0.2.0",
-  "packageManager": "pnpm@10.31.0",
+  "packageManager": "pnpm@10.32.1",
   "description": "Macbook computer keyboard style for VueJS component.",
   "keywords": [
     "keyboard",
@@ -47,27 +47,27 @@
     "vue": "^3.0.0"
   },
   "dependencies": {
-    "vue": "^3.5.29"
+    "vue": "^3.5.30"
   },
   "devDependencies": {
     "@ntnyq/eslint-config": "^5.9.0",
     "@ntnyq/prettier-config": "^3.0.1",
     "@types/node": "^24.12.0",
-    "@vitejs/plugin-vue": "^6.0.4",
+    "@vitejs/plugin-vue": "^6.0.5",
     "@vue/test-utils": "^2.4.6",
     "bumpp": "^10.4.1",
     "eslint": "^9.39.4",
-    "happy-dom": "^20.8.3",
+    "happy-dom": "^20.8.4",
     "husky": "^9.1.7",
     "nano-staged": "^0.9.0",
     "npm-run-all2": "^8.0.4",
     "prettier": "^3.8.1",
-    "sass": "^1.97.3",
-    "tinyexec": "^1.0.2",
-    "tsdown": "^0.21.0",
+    "sass": "^1.98.0",
+    "tinyexec": "^1.0.4",
+    "tsdown": "^0.21.3",
     "typescript": "^5.9.3",
     "vite": "^7.3.1",
-    "vitest": "^4.0.18"
+    "vitest": "^4.1.0"
   },
   "nano-staged": {
     "*.{js,ts,cjs,mjs,vue,md,yml,yaml,json}": "eslint --fix"
