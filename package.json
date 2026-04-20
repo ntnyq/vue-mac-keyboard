@@ -50,10 +50,10 @@
     "vue": "^3.5.32"
   },
   "devDependencies": {
-    "@ntnyq/eslint-config": "^6.0.0",
+    "@ntnyq/eslint-config": "^6.0.1",
     "@ntnyq/prettier-config": "^3.0.1",
-    "@types/node": "^25.5.2",
-    "@vitejs/plugin-vue": "^6.0.5",
+    "@types/node": "^25.6.0",
+    "@vitejs/plugin-vue": "^6.0.6",
     "@vue/test-utils": "^2.4.6",
     "bumpp": "^11.0.1",
     "eslint": "^10.2.0",
@@ -61,13 +61,13 @@
     "husky": "^9.1.7",
     "nano-staged": "^1.0.2",
     "npm-run-all2": "^8.0.4",
-    "prettier": "^3.8.1",
+    "prettier": "^3.8.2",
     "sass": "^1.99.0",
-    "tinyexec": "^1.0.4",
-    "tsdown": "^0.21.7",
+    "tinyexec": "^1.1.1",
+    "tsdown": "^0.21.8",
     "typescript": "^6.0.2",
-    "vite": "^8.0.3",
-    "vitest": "^4.1.2"
+    "vite": "^8.0.8",
+    "vitest": "^4.1.4"
   },
   "nano-staged": {
     "*.{js,ts,tsx,mjs,vue,md,yml,yaml,json}": "eslint --fix"
