@@ -55,7 +55,7 @@
     "@types/node": "^26.1.1",
     "@vitejs/plugin-vue": "^6.0.8",
     "@vue/test-utils": "^2.4.11",
-    "bumpp": "^11.1.0",
+    "bumpp": "^12.0.0",
     "eslint": "^10.8.0",
     "happy-dom": "^20.11.1",
     "husky": "^9.1.7",
