@@ -21,8 +21,8 @@ jobs:
 
       - run: pnpm install --frozen-lockfile
       - run: pnpm run lint
-      - run: pnpm run typecheck
       - run: pnpm run build
+      - run: pnpm run typecheck
 
   test:
     runs-on: ${{ matrix.os }}

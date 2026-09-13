@@ -11,7 +11,9 @@
 
 .vue-mac-keyboard {
   position: relative;
+  box-sizing: border-box;
   width: 995px;
+  min-width: 995px;
   height: 394px;
   margin: 0 auto;
   background-color: #f2f2f2;
@@ -31,16 +33,16 @@
   ul {
     position: relative;
     float: left;
-    width: 992px;
-    margin-top: 9px;
-    padding-left: 11px;
+    width: 982px;
+    margin: 9px 0 0;
+    padding: 0 0 0 11px;
   }
 
   li {
     position: relative;
     float: left;
-    width: 62px;
-    height: 62px;
+    width: 64px;
+    height: 64px;
     margin: 0 5px 5px 0;
     background-color: var(--vmk-color-bg);
     border: 1px solid var(--vmk-color-border);
@@ -55,8 +57,11 @@
       0px 1px 0px var(--vmk-color-shadow),
       -1px 0px 0px var(--vmk-color-shadow),
       0px -1px 0px var(--vmk-color-shadow);
-    box-sizing: initial;
-    transition: all 0.4s ease-in;
+    box-sizing: border-box;
+    transition:
+      background-color 0.4s ease-in,
+      border-color 0.4s ease-in,
+      color 0.4s ease-in;
     user-select: none;
     cursor: pointer;
 
@@ -65,7 +70,8 @@
       background-color: var(--vmk-color-bg-active);
       border: 1px solid var(--vmk-color-border-active);
       color: var(--vmk-color-active);
-      transition: 1ms linear;
+      transition-duration: 1ms;
+      transition-timing-function: linear;
     }
 
     &.is-disabled {
@@ -73,9 +79,18 @@
       cursor: not-allowed;
     }
 
+    // Start each physical row below all previous floats, including at fractional zoom.
+    &:nth-child(15),
+    &:nth-child(29),
+    &:nth-child(43),
+    &:nth-child(56),
+    &:nth-child(68) {
+      clear: left;
+    }
+
     &:nth-child(1) {
-      width: 99px;
-      height: 28px;
+      width: 101px;
+      height: 30px;
       line-height: 28px;
       text-indent: 1em;
       text-align: left;
@@ -93,8 +108,8 @@
     &:nth-child(12),
     &:nth-child(13),
     &:nth-child(14) {
-      width: 60px;
-      height: 28px;
+      width: 62px;
+      height: 30px;
       line-height: 28px;
     }
     &:nth-child(15),
@@ -119,7 +134,6 @@
     &:nth-child(65),
     &:nth-child(66) {
       padding: 7px 0;
-      height: 48px;
     }
   }
 }
@@ -206,11 +220,11 @@
   }
   li:nth-child(28),
   li:nth-child(29) {
-    width: 73px;
+    width: 75px;
   }
   li:nth-child(43),
   li:nth-child(55) {
-    width: 102px;
+    width: 104px;
   }
   li:nth-child(43) {
     &:not(.is-disabled):active {
@@ -248,22 +262,22 @@
     line-height: 12px;
   }
   li:nth-child(56) {
-    width: 136px;
+    width: 138px;
   }
   li:nth-child(67) {
-    width: 137px;
+    width: 139px;
   }
   li:nth-child(71),
   li:nth-child(73) {
-    width: 70px;
+    width: 72px;
   }
   li:nth-child(72) {
-    width: 333px;
+    width: 335px;
   }
 
   li:nth-child(76),
   li:nth-child(78) {
-    height: 29px;
+    height: 31px;
     line-height: 29px;
   }
   li:nth-child(76) {
@@ -273,7 +287,7 @@
   li:nth-child(78) {
     position: absolute;
     bottom: 0;
-    right: 84px;
+    right: 74px;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
   }

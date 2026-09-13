@@ -4,9 +4,17 @@ import Play from './Play.vue'
 </script>
 
 <template>
-  <div class="flex flex-col">
+  <div class="min-h-dvh">
+    <a
+      class="skip-link"
+      href="#main"
+      >Skip to keyboard playground</a
+    >
     <Navbar />
-    <main class="h-[calc(100vh-var(--h-navbar))]">
+    <main
+      id="main"
+      tabindex="-1"
+    >
       <Play />
     </main>
   </div>

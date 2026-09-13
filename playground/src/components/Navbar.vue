@@ -1,34 +1,58 @@
 <script lang="ts" setup>
 import { repository, version } from '../../../package.json'
-import { toggleDark } from '../composables/useDark'
+import { isDark, toggleDark } from '../composables/useDark'
 </script>
 
 <template>
-  <div
-    class="h-$h-navbar flex flex-wrap items-center justify-between border-b border-base p-2 px-4"
-  >
-    <div class="flex gap-1">
-      <h1 class="text-xl font-semibold">Vue Mac Keyboard</h1>
-      <small class="font-500">{{ version }}</small>
-    </div>
-    <div class="flex items-center gap-2">
-      <button
-        @click="toggleDark"
-        class="btn-icon"
-        type="button"
-        role="button"
-      >
-        <div class="i-ri:sun-line dark:i-ri:moon-line" />
-      </button>
+  <header class="border-b border-base">
+    <nav
+      class="mx-auto h-16 max-w-1160px flex items-center justify-between gap-3 px-5 sm:px-8"
+      aria-label="Main navigation"
+    >
       <a
         :href="`https://github.com/${repository}`"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="btn-icon"
-        role="button"
+        class="flex min-w-0 items-center gap-3 rounded-md"
+        aria-label="Vue Mac Keyboard on GitHub"
       >
-        <div class="i-ri:github-fill" />
+        <span
+          class="brand-mark"
+          aria-hidden="true"
+          >⌘</span
+        >
+        <span
+          class="text-15px font-650 tracking--0.3px"
+          translate="no"
+          >Vue Mac Keyboard</span
+        >
+        <span class="version-label hidden sm:inline-flex">v{{ version }}</span>
       </a>
-    </div>
-  </div>
+      <div class="flex items-center gap-2">
+        <button
+          @click="toggleDark"
+          :aria-label="isDark ? 'Switch to light mode' : 'Switch to dark mode'"
+          :title="isDark ? 'Switch to light mode' : 'Switch to dark mode'"
+          class="btn-icon"
+          type="button"
+        >
+          <span
+            :class="isDark ? 'i-ri:sun-line' : 'i-ri:moon-line'"
+            aria-hidden="true"
+          />
+        </button>
+        <a
+          :href="`https://github.com/${repository}`"
+          class="btn-icon"
+          aria-label="View source on GitHub"
+          title="View source on GitHub"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span
+            class="i-ri:github-fill"
+            aria-hidden="true"
+          />
+        </a>
+      </div>
+    </nav>
+  </header>
 </template>

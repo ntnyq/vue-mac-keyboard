@@ -13,6 +13,10 @@ import {
 export default defineConfig({
   transformers: [transformerDirectives(), transformerVariantGroup()],
 
+  content: {
+    filesystem: ['src/**/*.{vue,ts}'],
+  },
+
   presets: [
     presetWind4(),
     presetIcons({
