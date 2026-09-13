@@ -1,7 +1,7 @@
 {
   "name": "vue-mac-keyboard",
   "type": "module",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "packageManager": "pnpm@12.4.1",
   "description": "Macbook computer keyboard style for VueJS component.",
   "keywords": [
