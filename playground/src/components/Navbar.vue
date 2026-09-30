@@ -10,7 +10,7 @@ import { isDark, toggleDark } from '../composables/useDark'
       aria-label="Main navigation"
     >
       <a
-        :href="`https://github.com/${repository}`"
+        :href="repository.url"
         class="flex min-w-0 items-center gap-3 rounded-md"
         aria-label="Vue Mac Keyboard on GitHub"
       >
