@@ -84,12 +84,15 @@ const virtualLabels: Record<number, string> = {
  */
 export function fromKeyboardEvent(event: KeyboardEvent): KeyboardKey {
   let keycode: number | null = codeKeycodes[event.code] ?? null
+
   if (/^Key[A-Z]$/.test(event.code)) {
     keycode = event.code.codePointAt(3) ?? null
   }
+
   if (/^Digit\d$/.test(event.code)) {
     keycode = Number(event.code.slice(5)) + 48
   }
+
   if (/^F(?:[1-9]|1[0-2])$/.test(event.code)) {
     keycode = Number(event.code.slice(1)) + 111
   }
@@ -112,6 +115,7 @@ export function fromVirtualKey(data: KeycodeData): KeyboardKey {
     virtualLabels[data.keycode]
     || data.name.filter(Boolean).join(' ')
     || 'Unknown'
+
   return {
     code: `virtual:${data.keycode}:${label}`,
     key: label,

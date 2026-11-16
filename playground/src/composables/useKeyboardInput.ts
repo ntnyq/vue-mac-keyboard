@@ -29,11 +29,14 @@ export function useKeyboardInput() {
     if (!isListening.value) {
       return
     }
+
     isWindowFocused.value = true
     const isHeld = activeKeys.value.some(active => active.code === key.code)
+
     if (!isHeld) {
       activeKeys.value = [...activeKeys.value, key]
     }
+
     if (isHeld || repeat) {
       return
     }
@@ -45,6 +48,7 @@ export function useKeyboardInput() {
         ' + ',
       ),
     }
+
     lastStroke.value = stroke
     history.value = [stroke, ...history.value].slice(0, 12)
   }
@@ -90,16 +94,20 @@ export function useKeyboardInput() {
     const hadMeta = activeKeys.value.some(
       key => key.source === 'Keyboard' && key.keycode === 91,
     )
+
     activeKeys.value = activeKeys.value.filter(key => {
       if (key.source !== 'Keyboard') {
         return true
       }
+
       if (key.code.startsWith('modifier:') && key.key === event.key) {
         return false
       }
+
       if (key.keycode !== null && key.keycode in modifiers) {
         return modifiers[key.keycode]
       }
+
       // macOS may omit keyup for keys released while Command is held.
       return !hadMeta || event.metaKey
     })
@@ -111,6 +119,7 @@ export function useKeyboardInput() {
       { keycode: 18, key: 'Alt', label: '⌥ Option' },
       { keycode: 91, key: 'Meta', label: '⌘ Command' },
     ]
+
     for (const key of modifierKeys) {
       if (
         modifiers[key.keycode]
@@ -132,6 +141,7 @@ export function useKeyboardInput() {
     if (!isListening.value) {
       return
     }
+
     reconcileModifiers(event)
     press(fromKeyboardEvent(event), event.repeat)
   })
@@ -139,10 +149,13 @@ export function useKeyboardInput() {
     if (!isListening.value) {
       return
     }
+
     const key = fromKeyboardEvent(event)
+
     activeKeys.value = activeKeys.value.filter(
       active => active.code !== key.code,
     )
+
     if (key.keycode === 91 && !event.metaKey) {
       // Releasing Command also releases ordinary keys whose keyup macOS swallowed.
       activeKeys.value = activeKeys.value.filter(
@@ -151,6 +164,7 @@ export function useKeyboardInput() {
           || [16, 17, 18, 91].includes(active.keycode ?? 0),
       )
     }
+
     reconcileModifiers(event)
   })
   useEventListener(window, 'pointerup', releaseVirtualKeys)

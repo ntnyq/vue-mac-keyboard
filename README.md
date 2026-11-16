@@ -81,6 +81,7 @@ const keycode = ref([])
 function onKeycodeDown(keycodeData: KeycodeData) {
   keycode.value = [keycodeData.keycode]
 }
+
 function onKeycodeUp(keycodeData: KeycodeData) {
   keycode.value = []
 }
