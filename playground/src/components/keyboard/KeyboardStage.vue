@@ -31,13 +31,17 @@ const modifierPositions: Record<number, string> = {
 
 function isKeyPressed(element: HTMLElement) {
   const keycode = Number(element.dataset.key)
+
   if (!props.keycodes.includes(keycode)) {
     return false
   }
+
   const position = modifierPositions[Number(element.dataset.index)]
+
   if (!position) {
     return true
   }
+
   const family = position.replace(/(?:Left|Right)$/, '')
   const hasPhysicalPosition = props.activeCodes.some(
     code => code === `${family}Left` || code === `${family}Right`,
@@ -45,6 +49,7 @@ function isKeyPressed(element: HTMLElement) {
   const hasVirtualPress = props.activeCodes.some(code =>
     code.startsWith(`virtual:${keycode}:`),
   )
+
   return (
     !hasPhysicalPosition
     || hasVirtualPress
@@ -58,10 +63,12 @@ const vKeyboardControls: ObjectDirective<HTMLElement> = {
     element.querySelector('ul')?.setAttribute('role', 'group')
     element.querySelectorAll('li').forEach((key, index) => {
       const data = keycodeDataList[index]
+
       key.setAttribute('role', 'button')
       key.setAttribute('aria-label', fromVirtualKey(data).label)
       key.dataset.index = String(index)
       key.tabIndex = index === 0 ? 0 : -1
+
       if (data.keycode < 0) {
         key.setAttribute('aria-disabled', 'true')
         key.title = 'This hardware key is not reported by the browser'
@@ -71,6 +78,7 @@ const vKeyboardControls: ObjectDirective<HTMLElement> = {
   updated(element) {
     element.querySelectorAll('li').forEach(key => {
       const isPressed = isKeyPressed(key)
+
       key.classList.toggle('is-pressed', isPressed)
       key.setAttribute('aria-pressed', String(isPressed))
       key.setAttribute(
@@ -91,11 +99,15 @@ function pressKey(event: Event) {
   if (!props.isListening) {
     return
   }
+
   const element = getKey(event)
+
   if (!element) {
     return
   }
+
   const key = keycodeDataList[Number(element.dataset.index)]
+
   if (key && key.keycode >= 0) {
     emit('press', key)
   }
@@ -105,23 +117,29 @@ function onPointerDown(event: PointerEvent) {
   if (event.button !== 0) {
     return
   }
+
   getKey(event)?.focus({ preventScroll: true })
   pressKey(event)
 }
 
 function onKeyDown(event: KeyboardEvent) {
   const element = getKey(event)
+
   if (!element) {
     return
   }
+
   if (event.key === 'Enter' || event.key === ' ') {
     event.preventDefault()
     event.stopPropagation()
+
     if (!event.repeat) {
       pressKey(event)
     }
+
     return
   }
+
   const directions: Record<string, number> = {
     ArrowLeft: -1,
     ArrowRight: 1,
@@ -129,9 +147,11 @@ function onKeyDown(event: KeyboardEvent) {
     ArrowDown: 14,
   }
   const direction = directions[event.key]
+
   if (!direction) {
     return
   }
+
   event.preventDefault()
   const keys = [
     ...(element.parentElement?.querySelectorAll<HTMLElement>('li[data-key]')
@@ -139,6 +159,7 @@ function onKeyDown(event: KeyboardEvent) {
   ]
   const next =
     keys[(keys.indexOf(element) + direction + keys.length) % keys.length]
+
   next.focus()
 }
 
@@ -146,6 +167,7 @@ function onKeyUp(event: KeyboardEvent) {
   if (!getKey(event) || (event.key !== 'Enter' && event.key !== ' ')) {
     return
   }
+
   event.preventDefault()
   event.stopPropagation()
   emit('release')
@@ -153,9 +175,11 @@ function onKeyUp(event: KeyboardEvent) {
 
 function onFocusIn(event: FocusEvent) {
   const element = getKey(event)
+
   if (!element) {
     return
   }
+
   element.parentElement
     ?.querySelectorAll<HTMLElement>('li[data-key]')
     .forEach(key => {

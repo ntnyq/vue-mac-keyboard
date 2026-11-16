@@ -13,7 +13,9 @@ async function setupKeyboard() {
       render: () => h('div'),
     }),
   )
+
   await nextTick()
+
   return wrapper
 }
 
@@ -30,7 +32,9 @@ function dispatchKey(
     cancelable: true,
     ...options,
   })
+
   window.dispatchEvent(event)
+
   return event
 }
 
@@ -38,6 +42,7 @@ describe('playground keyboard input', () => {
   it('highlights physical keys immediately and retains the last press after release', async () => {
     const { vm } = await setupKeyboard()
     const event = dispatchKey('keydown', 'KeyA', 'a')
+
     expect(vm.keycodes).toEqual([65])
     expect(vm.lastStroke?.label).toBe('A')
     expect(event.defaultPrevented).toBe(false)
@@ -48,6 +53,7 @@ describe('playground keyboard input', () => {
 
   it('keeps both Shift keys independently and preserves chords when one key is released', async () => {
     const { vm } = await setupKeyboard()
+
     dispatchKey('keydown', 'ShiftLeft', 'Shift', { shiftKey: true })
     dispatchKey('keydown', 'ShiftRight', 'Shift', { shiftKey: true })
     dispatchKey('keydown', 'KeyA', 'A', { shiftKey: true })
@@ -63,22 +69,28 @@ describe('playground keyboard input', () => {
 
   it('does not flood history on repeat and keeps only the latest 12 presses', async () => {
     const { vm } = await setupKeyboard()
+
     dispatchKey('keydown', 'KeyA', 'a')
+
     for (let index = 0; index < 20; index++) {
       dispatchKey('keydown', 'KeyA', 'a', { repeat: true })
     }
+
     expect(vm.history).toHaveLength(1)
     dispatchKey('keyup', 'KeyA', 'a')
+
     for (let index = 0; index < 20; index++) {
       dispatchKey('keydown', 'KeyB', 'b')
       dispatchKey('keyup', 'KeyB', 'b')
     }
+
     expect(vm.history).toHaveLength(12)
     expect(vm.history[0].id).toBe(21)
   })
 
   it('maps punctuation, right Command and IME physical codes without keyCode', async () => {
     const { vm } = await setupKeyboard()
+
     dispatchKey('keydown', 'Equal', '+', { shiftKey: true })
     expect(vm.keycodes).toEqual([16, 187])
     expect(vm.lastStroke?.chord).toBe('⇧ Shift + +')
@@ -96,6 +108,7 @@ describe('playground keyboard input', () => {
 
   it('clears held keys when the page loses focus or becomes hidden', async () => {
     const { vm } = await setupKeyboard()
+
     dispatchKey('keydown', 'KeyA', 'a')
     window.dispatchEvent(new Event('blur'))
     expect(vm.keycodes).toEqual([])
@@ -111,6 +124,7 @@ describe('playground keyboard input', () => {
 
   it('combines pointer and physical input and releases a pointer outside the keyboard', async () => {
     const { vm } = await setupKeyboard()
+
     dispatchKey('keydown', 'ShiftLeft', 'Shift', { shiftKey: true })
     vm.pressVirtualKey({ keycode: 65, name: ['A'] })
     expect(vm.keycodes).toEqual([16, 65])
@@ -124,6 +138,7 @@ describe('playground keyboard input', () => {
 
   it('pauses both input sources and allows clearing history to be undone', async () => {
     const { vm } = await setupKeyboard()
+
     dispatchKey('keydown', 'KeyA', 'a')
     vm.toggleListening()
     expect(vm.keycodes).toEqual([])
@@ -145,6 +160,7 @@ describe('playground keyboard input', () => {
   it('removes listeners on unmount', async () => {
     const wrapper = await setupKeyboard()
     const vm = wrapper.vm
+
     wrapper.unmount()
     dispatchKey('keydown', 'KeyA', 'a')
     expect(vm.history).toHaveLength(0)

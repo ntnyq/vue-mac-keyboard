@@ -19,9 +19,11 @@ const status = computed(() => {
   if (!props.isListening) {
     return 'Paused'
   }
+
   if (!props.isWindowFocused) {
     return 'Click here to start'
   }
+
   return props.activeKeys.length ? 'Receiving input' : 'Listening for keys'
 })
 const displayedKeys = computed(() =>
